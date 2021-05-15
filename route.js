@@ -5,6 +5,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import {ProfileScreen} from './src/components/profile';
 import {SettingScreen} from './src/components/setting';
+import {PurchaseScreen} from './src/components/purchase';
 import BottomTabScreens from './myBottomTab';
 
 let colorConst = require('./src/globalComponent/colorConstants');
@@ -54,6 +55,17 @@ const FirstActivity_StackNavigator = createStackNavigator({
 });
 
 const SecondActivity_StackNavigator = createStackNavigator({
+  // ScreenHome: {  check for applying bottom tab bar for all drawer items
+  //   screen: BottomTabScreens,
+  //   navigationOptions: ({navigation}) => ({
+  //     title: 'User Home Screen',
+  //     headerLeft: () => <NavigationStructure navigationProps={navigation} />,
+  //     headerStyle: {
+  //       backgroundColor: colorConst.HEADER_BACKGROUND_COLOR,
+  //     },
+  //     headerTintColor: colorConst.HEADER_TINT_COLOR,
+  //   }),
+  // },
   Second: {
     screen: ProfileScreen,
     navigationOptions: ({navigation}) => ({
@@ -81,6 +93,20 @@ const ThirdActivity_StackNavigator = createStackNavigator({
   },
 });
 
+const PurchaseActivity_StackNavigator = createStackNavigator({
+  Forth: {
+    screen: PurchaseScreen,
+    navigationOptions: ({navigation}) => ({
+      title: 'Purchase with GPay',
+      headerLeft: () => <NavigationStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: colorConst.HEADER_BACKGROUND_COLOR,
+      },
+      headerTintColor: colorConst.HEADER_TINT_COLOR,
+    }),
+  },
+});
+
 const Drawer = createDrawerNavigator({
   Screen1: {
     screen: FirstActivity_StackNavigator,
@@ -91,13 +117,19 @@ const Drawer = createDrawerNavigator({
   Screen2: {
     screen: SecondActivity_StackNavigator,
     navigationOptions: {
-      drawerLabel: 'Profile',
+      drawerLabel: 'Drawer Profile',
     },
   },
   Screen3: {
     screen: ThirdActivity_StackNavigator,
     navigationOptions: {
-      drawerLabel: 'Setting',
+      drawerLabel: 'Drawer Setting',
+    },
+  },
+  Screen4: {
+    screen: PurchaseActivity_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Purchase',
     },
   },
 });

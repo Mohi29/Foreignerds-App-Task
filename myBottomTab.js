@@ -28,11 +28,11 @@ const TabNavigator = createBottomTabNavigator(
   {
     ScreenHome: {
       screen: HomeScreen,
-      navigationOptions: {
+      navigationOptions: { //default name is taken like ScreenHome
         tabBarLabel: 'Home',
       },
     },
-    Profile: {screen: ProfileScreen},
+    TabProfile: {screen: ProfileScreen},
     Settings: {screen: SettingsScreen},
     About: {screen: AboutMeScreen}
   },

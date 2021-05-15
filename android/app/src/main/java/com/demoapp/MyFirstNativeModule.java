@@ -25,6 +25,6 @@ public class MyFirstNativeModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void showToastMessage(String msg, int duration) {
-        Toast.makeText(getReactApplicationContext(), msg, duration);
+        Toast.makeText(getReactApplicationContext(), msg, duration).show();
     }
 }
