@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DemoApp</string>
+    <string name="msg_subscribed">Msg Subscribed Success</string>
+    <string name="msg_subscribe_failed">Msg Subscribed Failed</string>
 </resources>
